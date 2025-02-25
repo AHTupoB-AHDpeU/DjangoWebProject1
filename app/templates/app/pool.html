@@ -1,0 +1,78 @@
+{% extends "app/layout.html" %}
+{% block title %}Обратная связь{% endblock %}
+{% block content %}
+{% load static %}
+
+{% if form != None %}
+    <header>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'site.css' %}">
+        <h2>Обратная связь</h2>
+    </header>
+    <div>
+        <form method="post">
+        {% csrf_token %}
+        <label for="{{ form.name.id_for_label }}">{{ form.name.label }}:</label> {{form.name}}<br><br>
+        <label for="{{form.city.id_for_label }}">{{ form.city.label }}:</label> {{form.city }}<br>
+        <label for="{{ form.theme.id_for_label }}">{{ form.theme.label }}:</label> {{form.theme }}
+        <label for="{{form.internet.id_for_label }}">{{ form.internet.label }}</label><br> {{ form.internet }}<br><br>
+        <label for="{{form.notice.id_for_label }}">{{ form.notice.label }}</label> {{form.notice }}<br><br>
+        <label for="{{form.notice1.id_for_label }}">{{ form.notice1.label }}</label> {{form.notice1 }}<br><br>
+        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label> {{form.email }}<br><br>
+        <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}:</label> {{form.phone }}<br><br>
+        <label for="{{ form.message.id_for_label }}">{{ form.message.label }}:</label><br> {{form.message }}<br><br>
+        <input type="submit" value="Oтпpавить">
+        </form>
+    </div>
+
+    <script>
+        function changeButtonColorOnHover() {
+            const submitButton = document.querySelector('input[type="submit"]');
+            submitButton.onmouseover = function() {
+                submitButton.style.color = 'white';
+                submitButton.style.backgroundColor = 'blue';
+            };
+            submitButton.onmouseout = function() {
+                submitButton.style.color = '';
+                submitButton.style.backgroundColor = '';
+            };
+        }
+        function changeInputColorOnFocus() {
+            const inputFields = document.querySelectorAll('input, textarea');
+            inputFields.forEach(function(field) {
+                field.onfocus = function() {
+                    field.style.backgroundColor = '#e0f7fa';
+                };
+                field.onblur = function() {
+                    field.style.backgroundColor = '';
+                };
+            });
+        }
+        window.onload = function() {
+            changeButtonColorOnHover();
+            changeInputColorOnFocus();
+        }
+    </script>
+
+{% else %}
+    <br><h2>Обращение отправлено! </h2> 
+    <h3>Детали сообщения: </h3>
+    <ul>
+        <li><span>ФИО:</span> {{ data.name}}</li> 
+        <li><span>Гopoд: </span> {{ data.city }}</li> 
+        <li><span>Тема обращения:</span> {{ data.theme }}</li> 
+        <li><span>Откуда вы узнали о нашем Интернет-магазине:</span> {{ data.internet }}</li> 
+        <li><span>Прислать ответ на E-Mail:</span>
+            {{ data.notice }}
+        </li>
+        <li><span>Прислать ответ в виде SMS:</span>
+            {{ data.notice1 }}
+        </li>
+        <li><span>Baш e-mail: </span> {{ data.email }}</li>
+        <li><span>Baш номер телефона: </span> {{ data.phone }}</li>
+        <li><span>Текст сообщения:</span> {{ data.message }}</li>
+    </ul>
+{% endif %}
+
+{% endblock %}

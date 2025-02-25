@@ -1,0 +1,37 @@
+{% extends "app/layout.html" %}
+{% block title %}Полезные ссылки{% endblock %}
+{% block content %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'site.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Полезные ссылки</h1>
+    </header>
+    <section>
+        <a href="https://www.nvidia.com/en-us/geforce/graphics-cards/" target="_blank">
+            <img src="{% static 'app/content/nvidia_logo.png' %}" alt="NVIDIA Logo"/>
+        </a>
+        <p>Ресурс 1: Предоставляет отличные видеокарты.</p>
+
+        <a href="https://www.gigabyte.com/Motherboard/" target="_blank">
+            <img src="{% static 'app/content/gigabyte_logo.png' %}" alt="Gigabye Logo"/>
+        </a>
+        <p>Ресурс 2: Предлагает материнские платы с хорошими отзывами.</p>
+
+        <a href="https://www.amd.com/en/products/processors/desktops/ryzen.html" target="_blank">
+            <img src="{% static 'app/content/amd_logo.png' %}" alt="AMD Logo"/>
+        </a>
+        <p>Ресурс 3: Продает недорогие процессоры.</p>
+    </section>
+</body>
+</html>
+
+{% endblock %}
