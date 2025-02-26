@@ -5,7 +5,7 @@
 <h2> {{post_1.title}} </h2>
 
 {% if post_1.image and post_1.image.url != '/media/temp.jpg' %}
-<img src="{{ post_1.image.url }}" alt=" Картинка статьи блога" width="200" />
+<img src="{{ post_1.image.url }}" alt=" Картинка статьи блога" width="800" />
 {% endif %}
 
 <p> {{post_1.content|linebreaksbr}} </p>      {# вывод текста по абзацам#}
@@ -22,7 +22,7 @@
 </form>
 
 {% else %}
-<h3> Для добавления своего комментария, пожалуйста, авторизуйтесь </h3>
+<h3> Для добавления своего комментария, пожалуйста, авторизуйтесь. </h3>
 {% endif %}
 
 <br />

@@ -1,22 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+
 body {
-    padding-top: 250px;
+    padding-top: 130px;
     padding-bottom: 20px;
+    font-family: "Varela", sans-serif;
+    text-align: center;
+    background-color: #41B3A3;
+    color: #333;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
 }
 
-/* styles for validation helpers */
 .field-validation-error {
     color: #b94a48;
 }
@@ -43,4 +46,234 @@ input[type="checkbox"].input-validation-error {
 
 h5 {
     color: aqua;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    color: #FFD700; /* Основной цвет заголовков */
+    text-align: center;
+    background-color: #C38D9E;
+    border-radius: 20px;
+    font-weight: bold
+}
+
+/* Адреса */
+.address-container {
+    color: #FFD700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    font-size: 24px;
+}
+
+.address-block {
+    font-style: normal;
+    padding: 15px;
+    background-color: #C38D9E;
+    border-radius: 20px;
+    width: fit-content;
+    font-size: 24px;
+}
+
+.email-block {
+    font-style: normal;
+    padding: 15px;
+    background-color: #C38D9E;
+    border-radius: 20px;
+    width: fit-content;
+    margin-top: 15px; /* Отступ сверху для разделения */
+    font-size: 24px;
+}
+
+/* Ссылки */
+a {
+    color: #E27D60; /* Цвет ссылок */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 28px; /* Размер заголовка второго уровня */
+}
+
+h3 {
+    font-size: 28px; /* Размер заголовка третьего уровня */
+}
+
+p {
+    font-size: 18px; /* Размер основного текста */
+    color: midnightblue;
+}
+
+section {
+    text-align: center; /* Выравнивание всего контента по центру */
+    padding: 20px;
+}
+
+    section a {
+        display: block;
+        margin: 20px auto;
+    }
+
+    section img {
+        width: 200px; /* Фиксированный размер логотипов */
+        height: auto;
+        transition: transform 0.3s ease-in-out;
+    }
+
+        section img:hover {
+            transform: scale(1.1); /* Увеличение изображения при наведении */
+        }
+
+    section p {
+        font-family: 'Varela', sans-serif;
+        font-size: 18px;
+        color: midnightblue; /* Цвет текста */
+        margin-bottom: 20px;
+    }
+
+#myCarousel {
+    margin-top: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.btn {
+    font-family: 'Varela', sans-serif; /* Ваш шрифт */
+    background-color: #E27D60; /* Основной цвет кнопок */
+    color: white; /* Белый текст */
+    border: none; /* Убираем стандартную рамку */
+    border-radius: 20px; /* Закругленные края */
+    padding: 10px 20px; /* Отступы внутри */
+    font-size: 16px; /* Размер шрифта */
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+    .btn:hover {
+        background-color: #E8A87C; /* Цвет кнопки при наведении */
+        color: white;
+    }
+
+.carousel-control {
+    background: none;
+    color: #E27D60;
+}
+
+    .carousel-control:hover {
+        color: #E8A87C;
+    }
+
+form div label[for="id_text"] {
+    display: none;
+}
+
+form div textarea {
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: 'Varela', sans-serif;
+}
+
+h7 {
+    font-size: 16px;
+    color: #777; /* Серый цвет */
+    font-weight: normal;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+textarea {
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: 'Varela', sans-serif;
+}
+
+#loginForm {
+    max-width: 1000px; /* Задаём максимальную ширину */
+    padding: 20px;
+    margin-left: 50%;
+    text-align: start;
+}
+
+    #loginForm h4 {
+        color: midnightblue;
+        font-family: 'Varela', sans-serif;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+        width: 100%;
+        border-radius: 20px;
+        padding: 12px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        font-family: 'Varela', sans-serif;
+        text-align: center;
+    }
+
+/* Убираем help text (подсказки) и списки ошибок под полями */
+form .helptext,
+form ul.errorlist {
+    display: none !important;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+    form div {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    form label {
+        display: block;
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    form input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 20px; /* Закругление */
+        font-size: 16px;
+        outline: none;
+    }
+
+        form input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+label {
+    font-size: 18px; /* Размер шрифта */
+    font-weight: bold; /* Жирный текст */
+    color: midnightblue; /* Цвет текста */
+    display: block; /* Переносит label на новую строку */
+    margin-bottom: 5px; /* Отступ снизу */
 }

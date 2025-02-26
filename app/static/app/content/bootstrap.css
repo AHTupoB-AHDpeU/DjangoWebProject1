@@ -4198,6 +4198,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
   line-height: 20px;
 }
 
+.navbar-brand img {
+    border-radius: 20px; /* Сделает логотип круглым */
+    width: 100px; /* Подстрой ширину по необходимости */
+    height: 100px; /* Подстрой высоту по необходимости */
+    object-fit: cover; /* Чтобы картинка не деформировалась */
+}
+
 .navbar-brand:hover,
 .navbar-brand:focus {
   text-decoration: none;
@@ -4501,8 +4508,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 /*цвет фона навигационной панели – меню*/
 .navbar-inverse {
-    background-color: darkblue;
-    border-color: darkblue;
+    background-color: #2E8B8B;
+    border-color: #FFD700;
 }
 
 .navbar-inverse .navbar-brand {
@@ -4520,14 +4527,16 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
     /*цвет шрифта меню*/
 .navbar-inverse .navbar-nav > li > a {
-  color: forestgreen;
+  color: midnightblue;
+  font-weight: bold;
+  font-size: 16px;
 }
     /*стиль пунктов меню при наведении мыши*/
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #00ff21;
-  background-color: blue;
-  border-radius:15%;
+  color: #FFD700;
+  background-color: #C38D9E;
+  border-radius: 20px;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
